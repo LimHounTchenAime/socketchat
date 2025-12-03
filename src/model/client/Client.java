@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.Scanner;
 
-import model.Message;
-import model.SocketManager;
-import model.UserData;
-import model.type.Sender;
+import model.server.type.Sender;
+import model.tools.Message;
+import model.tools.SocketManager;
+import model.tools.UserData;
 
 public class Client extends Sender {
     private SocketManager socketManager;

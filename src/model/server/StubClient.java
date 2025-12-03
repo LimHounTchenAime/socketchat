@@ -5,9 +5,9 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.function.Consumer;
 
-import model.Message;
-import model.SocketManager;
-import model.UserData;
+import model.tools.Message;
+import model.tools.SocketManager;
+import model.tools.UserData;
 
 public class StubClient extends Thread {
     public SocketManager socketManager;

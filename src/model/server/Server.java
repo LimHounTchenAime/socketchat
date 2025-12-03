@@ -6,9 +6,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Message;
-import model.UserData;
-import model.type.Sender;
+import model.server.type.Sender;
+import model.tools.Message;
+import model.tools.UserData;
 
 
 public class Server extends Sender {

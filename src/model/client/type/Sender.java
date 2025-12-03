@@ -1,7 +1,7 @@
-package model.type;
+package model.client.type;
 
-import model.Message;
-import model.UserData;
+import model.tools.Message;
+import model.tools.UserData;
 
 public abstract class Sender {
     public Message BuildMessage(UserData userdata, String body){
