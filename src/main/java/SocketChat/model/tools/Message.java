@@ -1,4 +1,4 @@
-package model.tools;
+package SocketChat.model.tools;
 import java.io.Serializable;
 
 public class Message implements Serializable {

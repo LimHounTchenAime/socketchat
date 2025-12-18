@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Pos?>
+
+<VBox alignment="CENTER" spacing="20"
+      xmlns="http://javafx.com/javafx/20.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="SocketChat.controller.LoginController"
+      prefWidth="300" prefHeight="200">
+
+    <children>
+        <TextField fx:id="pseudoField" promptText="Choisissez un pseudo" />
+        <Button text="Entrer dans le chat" onAction="#onEnterChat"/>
+    </children>
+
+</VBox>

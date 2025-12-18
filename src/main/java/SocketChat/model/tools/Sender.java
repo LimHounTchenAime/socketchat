@@ -1,7 +1,4 @@
-package model.client.type;
-
-import model.tools.Message;
-import model.tools.UserData;
+package SocketChat.model.tools;
 
 public abstract class Sender {
     public Message BuildMessage(UserData userdata, String body){

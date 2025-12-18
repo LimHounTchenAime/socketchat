@@ -1,4 +1,4 @@
-package model.tools;
+package SocketChat.model.tools;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

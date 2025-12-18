@@ -1,4 +1,5 @@
-import model.server.Server;
+package SocketChat;
+import SocketChat.model.server.Server;
 
 /**
  * Hello world!

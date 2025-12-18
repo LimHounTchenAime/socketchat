@@ -1,4 +1,4 @@
-package model.server;
+package SocketChat.model.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -6,9 +6,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.server.type.Sender;
-import model.tools.Message;
-import model.tools.UserData;
+import SocketChat.model.tools.Message;
+import SocketChat.model.tools.Sender;
+import SocketChat.model.tools.UserData;
 
 
 public class Server extends Sender {

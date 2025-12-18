@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="root" prefHeight="64.0" prefWidth="530.0" spacing="15.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SocketChat.controller.MessageBubbleController">
+    <children>
+      <VBox prefHeight="36.0" prefWidth="533.0">
+         <children>
+              <Label fx:id="label" prefHeight="18.0" prefWidth="531.0" text="Matt" textAlignment="CENTER" underline="true" wrapText="true">
+               <opaqueInsets>
+                  <Insets left="5.0" />
+               </opaqueInsets>
+            </Label>
+            <Label fx:id="label1" prefHeight="24.0" prefWidth="529.0" text="Mon message" textAlignment="CENTER" wrapText="true">
+               <opaqueInsets>
+                  <Insets bottom="500.0" left="500.0" right="500.0" top="500.0" />
+               </opaqueInsets>
+            </Label>
+         </children>
+      </VBox>
+    </children>
+</HBox>

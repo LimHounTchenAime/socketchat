@@ -1,13 +1,13 @@
-package model.server;
+package SocketChat.model.server;
 
 import java.io.IOException;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.function.Consumer;
 
-import model.tools.Message;
-import model.tools.SocketManager;
-import model.tools.UserData;
+import SocketChat.model.tools.Message;
+import SocketChat.model.tools.SocketManager;
+import SocketChat.model.tools.UserData;
 
 public class StubClient extends Thread {
     public SocketManager socketManager;
@@ -46,6 +46,7 @@ public class StubClient extends Thread {
     public void run(){
         try {
             Message message = this.socketManager.readMessage();
+            this.userData = message.getAuthor();
             while(true){
                 message = (Message) this.socketManager.readMessage();
                 this.userData = message.getAuthor();
