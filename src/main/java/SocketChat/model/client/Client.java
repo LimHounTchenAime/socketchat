@@ -33,11 +33,10 @@ public class Client extends Sender {
         System.out.println("Connexion au serveur...");
         this.socketManager.connect(new InetSocketAddress("localhost", 5555));
 
-        // Signal "established"
+
         Message message = this.BuildMessage(userData, "established");
         this.socketManager.sendMessage(message);
 
-        // Lance l'écoute des messages
         launchListening();
     }
 

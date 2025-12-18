@@ -12,7 +12,6 @@ public class ClientApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/resources/SocketChat/LoginView.fxml"));
         Scene scene = new Scene(loader.load());
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Connexion au chat");
         primaryStage.show();

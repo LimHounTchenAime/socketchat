@@ -9,6 +9,7 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -18,7 +19,7 @@ public class ChatController {
 
     @FXML private VBox rootVBox;
     @FXML private ScrollPane scrollPane;
-    @FXML private VBox messagesVBox;
+    @FXML private ListView<HBox> messagesListView;
     @FXML private TextField messageTextField;
     @FXML private Button sendButton;
 
@@ -27,24 +28,21 @@ public class ChatController {
     @FXML
     public void setUserPseudo(String pseudo) {
 
-        // On crée le client AVEC le pseudo choisi
         client = new Client(new UserData(pseudo));
-
-        // Callback réception messages
         client.setOnMessageReceived(message -> {
-            Platform.runLater(() -> 
-                addMessage(message)
-            );
+            Platform.runLater(() -> {
+                addMessage(message);
+            });
         });
+
 
         try {
             client.connectToServer();
         } catch (ClassNotFoundException | IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        // Bouton + enter
+
         sendButton.setOnAction(e -> sendMessage());
         messageTextField.setOnAction(e -> sendMessage());
     }
@@ -55,13 +53,10 @@ public class ChatController {
         if (text.isEmpty()) return;
 
         try {
-            // Crée un message complet avec l'auteur
             Message msg = client.BuildMessage(client.getUserData(), text);
 
-            // 🔥 Envoi SOCKET via ton modèle
             client.sendMessage(msg);
 
-            // Ajout uniquement visuel (côté expéditeur)
             addMessage(msg);
 
         } catch (IOException e) {
@@ -82,21 +77,17 @@ public class ChatController {
 
             controller.setMessage(message, isOwnMessage);
 
-            if (isOwnMessage) {
-                bubble.setStyle("-fx-alignment: CENTER-LEFT;");
-            } else {
-                bubble.setStyle("-fx-alignment: CENTER-RIGHT;");
-            }
 
-            messagesVBox.getChildren().add(bubble);
+            Platform.runLater(() -> {
+                messagesListView.getItems().add(bubble);
 
-            scrollPane.layout();
-            scrollPane.setVvalue(1.0);
+                messagesListView.scrollTo(messagesListView.getItems().size() - 1);
+            });
+            
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 }
+

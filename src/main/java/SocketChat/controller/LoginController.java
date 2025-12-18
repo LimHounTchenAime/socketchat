@@ -20,9 +20,11 @@ public class LoginController {
             Scene chatScene = new Scene(loader.load());
 
             ChatController chatController = loader.getController();
-            chatController.setUserPseudo(pseudo); // 💥 On transmet le pseudo
+            chatController.setUserPseudo(pseudo);
 
             Stage stage = (Stage) pseudoField.getScene().getWindow();
+            stage.setHeight(600);
+            stage.setWidth(1000);
             stage.setScene(chatScene);
             stage.setTitle("Chat - " + pseudo);
             stage.show();

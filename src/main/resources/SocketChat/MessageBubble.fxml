@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <HBox fx:id="root" prefHeight="64.0" prefWidth="530.0" spacing="15.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SocketChat.controller.MessageBubbleController">
     <children>
@@ -13,6 +14,9 @@
                <opaqueInsets>
                   <Insets left="5.0" />
                </opaqueInsets>
+               <font>
+                  <Font size="18.0" />
+               </font>
             </Label>
             <Label fx:id="label1" prefHeight="24.0" prefWidth="529.0" text="Mon message" textAlignment="CENTER" wrapText="true">
                <opaqueInsets>

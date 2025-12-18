@@ -13,8 +13,8 @@ import SocketChat.model.tools.UserData;
 
 public class Server extends Sender {
 
-    List<StubClient> clients;
-    ServerSocket server;
+    private List<StubClient> clients;
+    private ServerSocket server;
 
     public Server() {
         this.clients = new ArrayList<StubClient>();
@@ -80,4 +80,6 @@ public class Server extends Sender {
     private Message BuildMessage(String string) {
         return this.BuildMessage(UserData.SERVER(), string);
     }
+
+
 }
