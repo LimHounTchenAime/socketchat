@@ -1,5 +1,7 @@
 # SocketChat : messagerie client-serveur en Java
 
+![CI](https://github.com/LimHounTchenAime/socketchat/actions/workflows/ci.yml/badge.svg)
+
 Salon de discussion en temps réel : un serveur TCP multi-clients et un client graphique JavaFX qui échangent des
 objets Java sérialisés sur des sockets. Projet du cours « Architecture des applications Internet » (master
 informatique, 2025).
