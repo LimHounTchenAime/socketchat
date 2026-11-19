@@ -16,7 +16,7 @@ public class LoginController {
             String pseudo = pseudoField.getText().trim();
             if (pseudo.isEmpty()) return;
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/resources/SocketChat/ChatView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SocketChat/ChatView.fxml"));
             Scene chatScene = new Scene(loader.load());
 
             ChatController chatController = loader.getController();

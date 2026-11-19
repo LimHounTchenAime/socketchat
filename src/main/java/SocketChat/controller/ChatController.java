@@ -70,7 +70,7 @@ public class ChatController {
         boolean isOwnMessage = message.getAuthor().equals(client.getUserData());
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/resources/SocketChat/MessageBubble.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/SocketChat/MessageBubble.fxml"));
             HBox bubble = loader.load();
 
             MessageBubbleController controller = loader.getController();
