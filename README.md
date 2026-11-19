@@ -1,18 +1,39 @@
-## Getting Started
+# SocketChat : messagerie client-serveur en Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Salon de discussion en temps réel : un serveur TCP multi-clients et un client graphique JavaFX qui échangent des
+objets Java sérialisés sur des sockets. Projet du cours « Architecture des applications Internet » (master
+informatique, 2025).
 
-## Folder Structure
+## Fonctionnalités
 
-The workspace contains two folders by default, where:
+- Serveur sur le port 5555 : un thread par client connecté, diffusion de chaque message à tous les participants,
+  message de bienvenue à la connexion.
+- Client JavaFX (vues FXML) : choix d'un pseudo, puis fenêtre de discussion avec bulles de messages.
+- Protocole : objets `Message` et `UserData` transmis par `ObjectOutputStream` / `ObjectInputStream`.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Lancer
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Prérequis : JDK 17 ou plus récent et Maven.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```bash
+mvn compile
+java -cp target/classes SocketChat.ServerApp   # serveur
+mvn javafx:run                                  # un client ; relancer la commande pour en ouvrir d'autres
+```
 
-## Dependency Management
+## Organisation
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```
+src/main/java/SocketChat
+├── ServerApp, ClientApp   points d'entrée
+├── controller/            contrôleurs JavaFX (connexion, discussion, bulle de message)
+└── model/
+    ├── server/            Server (acceptation des connexions), StubClient (un thread par client)
+    ├── client/            Client (connexion et écoute du serveur)
+    └── tools/             SocketManager, Message, UserData
+src/main/resources/SocketChat   vues FXML
+```
+
+## Équipe
+
+Aimé Lim Houn Tchen, MaTrabY
